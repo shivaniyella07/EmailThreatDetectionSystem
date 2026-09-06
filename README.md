@@ -1,8 +1,10 @@
 # AI-Powered Email Threat Detection, GeoLocation and Forensic Intelligence Platform
 
-Defensive cybersecurity platform for a 6-member AICTE hackathon team. The system will analyze suspicious emails for phishing, header forensics, URL intelligence, IP geolocation, and explainable risk scoring.
+Defensive cybersecurity platform for a 6-member AICTE hackathon team.
 
-**Phase 1** sets up the project structure, a FastAPI health API, and a React dashboard that shows backend connectivity. Analysis modules are placeholders only.
+**Intended workflow:** connect Gmail with Google OAuth 2.0 → select an email → run parallel analysis engines (NLP, headers, URLs, IP/geolocation, threat intel) → explainable score 0–100 (`SAFE` / `SUSPICIOUS` / `HIGH_RISK`). A **manual paste** path is the hackathon backup if OAuth is not available.
+
+**What works today:** FastAPI `GET /api/health` and a React dashboard that shows **CONNECTED** or **OFFLINE**. Gmail OAuth and analysis engines are planned only (see docs). Do not commit OAuth secrets.
 
 ## Organization and domain
 
@@ -12,10 +14,11 @@ Defensive cybersecurity platform for a 6-member AICTE hackathon team. The system
 
 ## Security rules
 
+- Gmail access must use **Google OAuth 2.0**. Never collect or store Gmail passwords.
 - Never execute email attachments.
 - Never automatically open or visit suspicious URLs; analyze URL strings only.
-- Do not commit secrets. Copy `backend/.env.example` to `backend/.env`.
-- Geolocation is **approximate intelligence**, not proof of attacker identity.
+- Do not commit secrets or OAuth credentials. Copy `backend/.env.example` to `backend/.env`.
+- IP geolocation is **approximate network intelligence**. Analysis does not prove attacker identity.
 
 ## Repository layout
 
@@ -61,10 +64,10 @@ This frontend uses Vite 5 so it runs on Node.js 18. Do not upgrade to the latest
 
 ## Team
 
-See [docs/team_modules.md](docs/team_modules.md) for the six member assignments. Use Git branches per feature to avoid merge conflicts.
+See [docs/team_modules.md](docs/team_modules.md) for the six member assignments (backend/Gmail orchestration, NLP, headers, URL/IP/geo, risk engine, frontend). Use Git branches per feature to avoid merge conflicts.
 
 ## Documentation
 
-- [docs/architecture.md](docs/architecture.md)
-- [docs/api_contract.md](docs/api_contract.md)
-- [docs/team_modules.md](docs/team_modules.md)
+- [docs/architecture.md](docs/architecture.md) — Gmail + manual workflow, pipeline, scoring weights
+- [docs/api_contract.md](docs/api_contract.md) — live health API and planned analysis JSON
+- [docs/team_modules.md](docs/team_modules.md) — ownership and integration rules

@@ -14,6 +14,10 @@ import os
 import urllib.error
 import urllib.request
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 DISCLAIMER = (
     "Location information is approximate network intelligence "
@@ -148,10 +152,10 @@ def _external_lookup(ip_address: str) -> dict:
 
     result["source"] = "external_provider"
 
-    result["country"] = data.get("country")
+    result["country"] = data.get("country_name") or data.get("country")
     result["region"] = data.get("region")
     result["city"] = data.get("city")
-    result["isp"] = data.get("isp")
+    result["isp"] = data.get("org") or data.get("isp")
     result["asn"] = data.get("asn")
     result["latitude"] = data.get("latitude")
     result["longitude"] = data.get("longitude")

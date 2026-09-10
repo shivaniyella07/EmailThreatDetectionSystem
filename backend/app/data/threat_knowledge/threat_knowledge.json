@@ -1,0 +1,465 @@
+{
+  "entries": [
+    {
+      "id": "credential-phishing-01",
+      "attack_type": "CREDENTIAL_PHISHING",
+      "description": "Attackers impersonate a trusted brand, service, administrator, or security team to trick victims into revealing usernames, passwords, MFA codes, authentication tokens, or other login credentials.",
+      "techniques": [
+        "credential harvesting",
+        "fake login portal",
+        "urgent account verification",
+        "password reset lure",
+        "MFA verification lure",
+        "fake security notification"
+      ],
+      "example_patterns": [
+        "verify your account",
+        "confirm your password",
+        "security check required",
+        "login to your account",
+        "log in to verify",
+        "enter your password",
+        "confirm your credentials",
+        "verify your identity",
+        "reset your password",
+        "update your login information",
+        "verify your MFA",
+        "enter the verification code",
+        "your account requires verification"
+      ],
+      "risk_level": "HIGH"
+    },
+    {
+      "id": "account-takeover-02",
+      "attack_type": "ACCOUNT_TAKEOVER",
+      "description": "Email claims that an account has been compromised, locked, or placed at risk and pressures the user to reauthenticate, approve a login, reset credentials, or confirm suspicious activity.",
+      "techniques": [
+        "account suspension",
+        "session hijack",
+        "fake security alerts",
+        "MFA fatigue",
+        "unauthorized login lure",
+        "account recovery scam"
+      ],
+      "example_patterns": [
+        "account locked",
+        "unauthorized login detected",
+        "your account will be suspended",
+        "login attempt blocked",
+        "suspicious login detected",
+        "someone accessed your account",
+        "your account has been compromised",
+        "unusual sign-in activity",
+        "your session has expired",
+        "restore access to your account",
+        "reactivate your account",
+        "confirm recent login activity"
+      ],
+      "risk_level": "HIGH"
+    },
+    {
+      "id": "bce-03",
+      "attack_type": "BUSINESS_EMAIL_COMPROMISE",
+      "description": "A spoofed, impersonated, or compromised business identity is used to manipulate employees into transferring money, changing payment details, purchasing items, or sharing sensitive company information.",
+      "techniques": [
+        "vendor impersonation",
+        "CEO fraud",
+        "invoice manipulation",
+        "executive spoofing",
+        "payment redirection",
+        "supplier impersonation"
+      ],
+      "example_patterns": [
+        "urgent request from your manager",
+        "wire transfer required",
+        "between us",
+        "please handle this discreetly",
+        "send the payment today",
+        "change the bank account details",
+        "process this payment urgently",
+        "keep this confidential",
+        "I need you to handle this immediately",
+        "send the funds to this account",
+        "do not discuss this with anyone",
+        "new payment instructions",
+        "urgent finance request"
+      ],
+      "risk_level": "HIGH"
+    },
+    {
+      "id": "ceo-impersonation-04",
+      "attack_type": "CEO_IMPERSONATION",
+      "description": "The attacker poses as a CEO, executive, manager, director, or other authority figure to pressure employees into making payments, purchasing items, sharing information, or bypassing normal verification procedures.",
+      "techniques": [
+        "executive spoofing",
+        "authority pressure",
+        "fast approval request",
+        "off-channel coordination",
+        "executive fraud",
+        "impersonated manager"
+      ],
+      "example_patterns": [
+        "from the CEO",
+        "urgent approval needed",
+        "do not tell anyone",
+        "confidential request",
+        "I need this handled immediately",
+        "this is the CEO",
+        "this is from your director",
+        "I need a quick favor",
+        "keep this between us",
+        "purchase gift cards for me",
+        "send me the gift card codes",
+        "I am in a meeting",
+        "cannot talk right now",
+        "handle this discreetly"
+      ],
+      "risk_level": "HIGH"
+    },
+    {
+      "id": "financial-fraud-05",
+      "attack_type": "FINANCIAL_FRAUD",
+      "description": "A fraudulent message requests payment, bank verification, money transfer, financial information, or changes to payment instructions using urgency, authority, or perceived legitimacy.",
+      "techniques": [
+        "bank verification",
+        "payment routing",
+        "invoice scam",
+        "cash transfer request",
+        "payment redirection",
+        "fraudulent transaction"
+      ],
+      "example_patterns": [
+        "payment required",
+        "transfer money",
+        "bank verification",
+        "complete the payment",
+        "send payment immediately",
+        "make the payment today",
+        "confirm your bank details",
+        "verify your banking information",
+        "transfer the funds",
+        "payment deadline",
+        "new bank details",
+        "updated payment instructions",
+        "confirm the transaction"
+      ],
+      "risk_level": "HIGH"
+    },
+    {
+      "id": "invoice-fraud-06",
+      "attack_type": "INVOICE_FRAUD",
+      "description": "The attacker alters, fabricates, or reuses an invoice or vendor relationship to make a company send money to a fraudulent account or pay a fake invoice.",
+      "techniques": [
+        "invoice tampering",
+        "payment redirection",
+        "vendor account change",
+        "reissued invoice",
+        "fake invoice",
+        "supplier fraud"
+      ],
+      "example_patterns": [
+        "invoice payment",
+        "updated banking instructions",
+        "urgent invoice review",
+        "please process immediately",
+        "attached invoice",
+        "new bank account for payment",
+        "updated payment details",
+        "vendor payment change",
+        "please pay this invoice",
+        "revised invoice",
+        "overdue invoice",
+        "payment account has changed",
+        "process the attached invoice"
+      ],
+      "risk_level": "HIGH"
+    },
+    {
+      "id": "bank-impersonation-07",
+      "attack_type": "BANK_IMPERSONATION",
+      "description": "Emails impersonate a bank or financial institution and claim suspicious activity, account problems, verification requirements, or transaction issues to make the victim reveal information or take risky actions.",
+      "techniques": [
+        "bank impersonation",
+        "fraud alert",
+        "KYC collection",
+        "account verification",
+        "fake transaction alert",
+        "bank security scam"
+      ],
+      "example_patterns": [
+        "your bank",
+        "bank security",
+        "verify banking information",
+        "suspicious transaction",
+        "suspicious activity on your account",
+        "your bank account is at risk",
+        "verify your bank account",
+        "confirm your banking details",
+        "unusual transaction detected",
+        "protect your funds",
+        "your debit card has been blocked",
+        "bank security alert",
+        "verify your identity with the bank",
+        "unauthorized transaction"
+      ],
+      "risk_level": "HIGH"
+    },
+    {
+      "id": "government-impersonation-08",
+      "attack_type": "GOVERNMENT_IMPERSONATION",
+      "description": "Attackers impersonate government agencies, tax authorities, regulators, courts, police, or other official authorities to create fear and urgency around compliance, penalties, payments, or legal action.",
+      "techniques": [
+        "government impersonation",
+        "tax scam",
+        "legal threat",
+        "compliance urgency",
+        "official notice fraud",
+        "penalty scam"
+      ],
+      "example_patterns": [
+        "government agency",
+        "tax authority",
+        "legal action",
+        "official notice",
+        "tax payment required",
+        "government compliance notice",
+        "your tax account requires attention",
+        "failure to respond will result in penalties",
+        "court notice",
+        "legal enforcement action",
+        "government refund verification",
+        "official government communication",
+        "tax violation",
+        "pay the outstanding penalty"
+      ],
+      "risk_level": "HIGH"
+    },
+    {
+      "id": "social-engineering-09",
+      "attack_type": "SOCIAL_ENGINEERING",
+      "description": "The message manipulates trust, authority, secrecy, fear, scarcity, or emotion to overcome normal security procedures and encourage the recipient to act without verification.",
+      "techniques": [
+        "authority",
+        "scarcity",
+        "fear",
+        "secrecy",
+        "urgency",
+        "trust manipulation",
+        "procedure bypass"
+      ],
+      "example_patterns": [
+        "confidential",
+        "do not tell anyone",
+        "keep this secret",
+        "between us",
+        "keep this confidential",
+        "please do not discuss this",
+        "bypass normal procedures",
+        "do not contact anyone else",
+        "this is highly confidential",
+        "I need you to act quickly",
+        "do not ask questions",
+        "handle this privately",
+        "keep this between us",
+        "unusual request"
+      ],
+      "risk_level": "MEDIUM"
+    },
+    {
+      "id": "urgency-time-pressure-10",
+      "attack_type": "URGENCY_TIME_PRESSURE",
+      "description": "The email creates an artificial deadline, immediate threat, or time pressure to force the recipient to act before carefully reviewing or verifying the request.",
+      "techniques": [
+        "time pressure",
+        "deadline threat",
+        "expire today",
+        "immediate response",
+        "limited-time pressure",
+        "rapid action demand"
+      ],
+      "example_patterns": [
+        "urgent",
+        "immediately",
+        "respond now",
+        "expires today",
+        "act now",
+        "action required",
+        "final warning",
+        "limited time",
+        "within 24 hours",
+        "without delay",
+        "time sensitive",
+        "respond immediately",
+        "do this today",
+        "your access will expire",
+        "last chance"
+      ],
+      "risk_level": "MEDIUM"
+    },
+    {
+      "id": "fear-manipulation-11",
+      "attack_type": "FEAR_MANIPULATION",
+      "description": "Messages trigger fear about account suspension, security breaches, legal consequences, financial loss, or loss of service to pressure the recipient into immediate compliance.",
+      "techniques": [
+        "fear baiting",
+        "threat escalation",
+        "loss of access",
+        "account closure",
+        "legal intimidation",
+        "security scare"
+      ],
+      "example_patterns": [
+        "account will be suspended",
+        "lose access",
+        "security breach",
+        "legal action",
+        "your account is at risk",
+        "your access will be terminated",
+        "your account will be closed",
+        "unauthorized activity detected",
+        "failure to respond",
+        "your account has been compromised",
+        "you may lose access",
+        "security threat detected",
+        "immediate action is required",
+        "your service will be terminated"
+      ],
+      "risk_level": "HIGH"
+    },
+    {
+      "id": "malware-delivery-12",
+      "attack_type": "MALWARE_DELIVERY",
+      "description": "The email uses a malicious attachment, download, software installation, fake security alert, infected document, or deceptive link to persuade the victim to execute or install malware.",
+      "techniques": [
+        "malicious attachment",
+        "macro phishing",
+        "download lure",
+        "weaponized document",
+        "fake security software",
+        "malicious installer",
+        "fake infection alert"
+      ],
+      "example_patterns": [
+        "review the attached document",
+        "download the file",
+        "open immediately",
+        "click to view",
+        "your computer is infected",
+        "your device is infected",
+        "your computer has been compromised",
+        "download this security tool",
+        "install this security software",
+        "install the security update",
+        "download and install",
+        "run this security tool",
+        "open the attached file",
+        "enable macros to view",
+        "download the attached document",
+        "your device requires a security update",
+        "remove the virus using this tool",
+        "scan your computer using this software",
+        "install this antivirus tool"
+      ],
+      "risk_level": "HIGH"
+    },
+    {
+      "id": "suspicious-link-phishing-13",
+      "attack_type": "SUSPICIOUS_LINK",
+      "description": "The message includes or references a suspicious, deceptive, shortened, or lookalike URL designed to redirect the victim to a fraudulent website, fake login page, malware download, or credential-harvesting site.",
+      "techniques": [
+        "lookalike domain",
+        "URL shortener",
+        "login redirection",
+        "brand impersonation",
+        "malicious redirect",
+        "fake website"
+      ],
+      "example_patterns": [
+        "click here",
+        "secure your account",
+        "login with your credentials",
+        "review this link",
+        "click the link below",
+        "follow this link",
+        "verify your account here",
+        "access your account",
+        "open this link",
+        "confirm your identity using this link",
+        "visit the secure portal",
+        "click to verify",
+        "use the link below",
+        "secure login",
+        "verify now"
+      ],
+      "risk_level": "HIGH"
+    },
+    {
+      "id": "gift-card-scam-14",
+      "attack_type": "GIFT_CARD_SCAM",
+      "description": "The sender attempts to obtain gift cards, prepaid cards, voucher codes, cryptocurrency, or other nonstandard payment methods, often by pretending to be a manager, executive, customer, or trusted person.",
+      "techniques": [
+        "gift card payment",
+        "prepaid card request",
+        "crypto payment",
+        "cash equivalent request",
+        "executive gift card fraud",
+        "voucher code theft"
+      ],
+      "example_patterns": [
+        "purchase gift cards",
+        "send codes",
+        "urgent reimbursement",
+        "buy gift cards",
+        "you have won a gift card",
+        "claim your gift card",
+        "claim your reward",
+        "gift card reward",
+        "purchase prepaid cards",
+        "send the gift card codes",
+        "scratch the cards and send the codes",
+        "send me the voucher codes",
+        "buy several gift cards",
+        "gift card payment",
+        "pay using gift cards",
+        "purchase Amazon gift cards",
+        "purchase prepaid vouchers",
+        "send the card numbers and PINs"
+      ],
+      "risk_level": "HIGH"
+    },
+    {
+      "id": "data-theft-15",
+      "attack_type": "DATA_THEFT",
+      "description": "The attacker requests sensitive internal data, customer records, credentials, confidential documents, employee information, financial records, or business information under a false or deceptive pretext.",
+      "techniques": [
+        "data exfiltration",
+        "confidential information request",
+        "sensitive file access",
+        "customer data theft",
+        "employee information theft",
+        "document harvesting"
+      ],
+      "example_patterns": [
+        "share confidential information",
+        "send customer records",
+        "provide sensitive data",
+        "download the file",
+        "send the employee list",
+        "share the customer database",
+        "send confidential documents",
+        "provide internal records",
+        "share the financial report",
+        "send the payroll information",
+        "provide customer information",
+        "send sensitive files",
+        "upload the confidential document",
+        "share internal company data",
+        "send the database",
+        "provide employee records",
+        "forward the confidential report",
+        "send the private documents"
+      ],
+      "risk_level": "HIGH"
+    }
+  ]
+}

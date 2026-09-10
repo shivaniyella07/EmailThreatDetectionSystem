@@ -264,7 +264,8 @@ class RiskEngineTests(unittest.TestCase):
             }
         )
         self.assertGreaterEqual(result["risk_score"], 75)
-        self.assertEqual(result["risk_level"], "CRITICAL")
+        self.assertEqual(result["risk_level"], "HIGH_RISK")
+        self.assertEqual(result["classification"], "HIGH_RISK")
         self.assertTrue(result["correlated_indicators"])
         self.assertTrue(
             any(
@@ -273,7 +274,11 @@ class RiskEngineTests(unittest.TestCase):
                 for reason in result["reasons"]
             )
         )
-        self.assertTrue(result["recommendation"].startswith("Treat this email"))
+        self.assertTrue(
+            result["recommendation"].startswith(
+                "Do not interact with links or attachments."
+            )
+        )
 
     def test_external_threat_intel_unavailable(self) -> None:
         result = score_threat(

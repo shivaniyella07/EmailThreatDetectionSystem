@@ -22,10 +22,9 @@ WEIGHTS = {
 
 # Overall Member 5 bands (SAFE / SUSPICIOUS / HIGH_RISK / CRITICAL).
 RISK_LEVEL_MAX = {
-    "SAFE": 24,
-    "SUSPICIOUS": 49,
-    "HIGH_RISK": 74,
-    "CRITICAL": 100,
+    "SAFE": 30,
+    "SUSPICIOUS": 60,
+    "HIGH_RISK": 100,
 }
 
 # Shared module/overall classification still used by Members 1 and 6.
@@ -106,14 +105,12 @@ def _normalize_findings(findings: dict[str, Any] | None) -> dict[str, Any]:
 
 
 def risk_level_from_score(score: int) -> str:
-    """Map 0–100 onto SAFE / SUSPICIOUS / HIGH_RISK / CRITICAL."""
+    """Map 0–100 onto the shared API-contract bands."""
     if score <= RISK_LEVEL_MAX["SAFE"]:
         return "SAFE"
     if score <= RISK_LEVEL_MAX["SUSPICIOUS"]:
         return "SUSPICIOUS"
-    if score <= RISK_LEVEL_MAX["HIGH_RISK"]:
-        return "HIGH_RISK"
-    return "CRITICAL"
+    return "HIGH_RISK"
 
 
 def classification_from_score(score: int) -> str:

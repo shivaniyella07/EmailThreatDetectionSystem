@@ -78,6 +78,17 @@ class ThreatAnalysisRequest(BaseModel):
     ip: Optional[Any] = None
     indicators: Optional[Any] = None
     email_text: Optional[str] = None
+    email_body: Optional[str] = None
+    body: Optional[str] = None
+    text: Optional[str] = None
+    raw_email: Optional[str] = None
+    headers: Optional[Any] = None
+    email: Optional[Any] = None
+    subject: Optional[str] = None
+    sender: Optional[str] = None
+    from_email: Optional[str] = None
+    to: Optional[str] = None
+    recipient: Optional[str] = None
     enable_external: bool = True
 
 
@@ -95,6 +106,8 @@ class RiskResult(BaseModel):
 class ThreatAnalysisResponse(BaseModel):
     """API response consumed by Member 6 / Member 1 orchestration."""
 
+    model_config = ConfigDict(extra="allow")
+
     risk_score: int = Field(ge=0, le=100)
     risk_level: str
     classification: str
@@ -104,3 +117,11 @@ class ThreatAnalysisResponse(BaseModel):
     correlated_indicators: list[CorrelatedIndicator] = Field(default_factory=list)
     category_scores: dict[str, int] = Field(default_factory=dict)
     errors: list[str] = Field(default_factory=list)
+    email: dict[str, Any] = Field(default_factory=dict)
+    overall: dict[str, Any] = Field(default_factory=dict)
+    analyses: dict[str, Any] = Field(default_factory=dict)
+    top_reasons: list[str] = Field(default_factory=list)
+    disclaimer: str = (
+        "Analysis provides security intelligence and risk assessment; "
+        "it does not prove attacker identity."
+    )

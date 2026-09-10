@@ -461,5 +461,62 @@
       ],
       "risk_level": "HIGH"
     }
+  ],
+  "iocs": [
+    {
+      "value": "198.51.100.66",
+      "type": "ip",
+      "threat_category": "CREDENTIAL_PHISHING",
+      "severity": "CRITICAL",
+      "confidence": 95,
+      "campaign": "Demo Credential Harvesting Campaign",
+      "threat_actor": "Unknown",
+      "source": "local_threat_knowledge",
+      "reason": "Originating IP is listed in local threat knowledge as a credential-harvesting host."
+    },
+    {
+      "value": "203.0.113.77",
+      "type": "ip",
+      "threat_category": "MALWARE_DELIVERY",
+      "severity": "HIGH",
+      "confidence": 85,
+      "campaign": "Demo Malware Delivery Campaign",
+      "threat_actor": "Unknown",
+      "source": "local_threat_knowledge",
+      "reason": "IP is listed in local threat knowledge as associated with malware delivery."
+    },
+    {
+      "value": "evil-login-portal.example",
+      "type": "domain",
+      "threat_category": "CREDENTIAL_PHISHING",
+      "severity": "HIGH",
+      "confidence": 90,
+      "campaign": "Demo Credential Harvesting Campaign",
+      "threat_actor": "Unknown",
+      "source": "local_threat_knowledge",
+      "reason": "Domain is listed in local threat knowledge as a fake login portal."
+    },
+    {
+      "value": "paypal-secure-verify.example",
+      "type": "domain",
+      "threat_category": "BANK_IMPERSONATION",
+      "severity": "HIGH",
+      "confidence": 88,
+      "campaign": "Demo Brand Impersonation Campaign",
+      "threat_actor": "Unknown",
+      "source": "local_threat_knowledge",
+      "reason": "Lookalike financial domain listed in local threat knowledge."
+    },
+    {
+      "value": "http://evil-login-portal.example/verify",
+      "type": "url",
+      "threat_category": "SUSPICIOUS_LINK",
+      "severity": "HIGH",
+      "confidence": 90,
+      "campaign": "Demo Credential Harvesting Campaign",
+      "threat_actor": "Unknown",
+      "source": "local_threat_knowledge",
+      "reason": "URL is listed in local threat knowledge as a phishing verification lure."
+    }
   ]
 }

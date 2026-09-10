@@ -19,9 +19,12 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
 
-from dotenv import load_dotenv
+try:
+    from dotenv import load_dotenv
 
-load_dotenv()
+    load_dotenv()
+except ImportError:
+    pass
 
 MODULE_NAME = "threat_intelligence"
 KNOWLEDGE_PATH = (

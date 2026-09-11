@@ -8,7 +8,7 @@
 
 It helps an analyst:
 
-1. Connect Gmail with Google OAuth 2.0 (planned; not implemented yet)
+1. Connect Gmail with Google OAuth 2.0 (mock mode is implemented; real token exchange is prepared for secure server-side storage)
 2. Fetch recent messages or pick one email
 3. Run a multi-engine analysis pipeline
 4. Receive an explainable threat score from 0–100
@@ -17,7 +17,7 @@ It helps an analyst:
 
 The product analyzes email **text and metadata only**. It never executes attachments and never automatically opens or visits URLs.
 
-**Current code (working foundation):** FastAPI `GET /api/health` and a React dashboard that shows backend **CONNECTED** / **OFFLINE**. Gmail OAuth, fetch, and analysis engines are **planned** and must not replace that health endpoint.
+**Current code (working foundation):** FastAPI `GET /api/health` and a React dashboard that shows backend **CONNECTED** / **OFFLINE**. The Gmail OAuth-ready mock/fetch foundation is implemented and must not replace that health endpoint; analyzers are integrated independently.
 
 ## Primary user workflow (Gmail)
 
@@ -62,7 +62,7 @@ Manual paste of raw email
                     +------------------------------------------+
                                |
                                v
-                    Google Gmail API (planned, OAuth 2.0)
+                    Google Gmail API (OAuth 2.0; mock mode for development)
 ```
 
 ## Analysis pipeline

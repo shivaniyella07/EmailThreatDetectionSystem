@@ -4,7 +4,7 @@ Defensive cybersecurity platform for a 6-member AICTE hackathon team.
 
 **Intended workflow:** connect Gmail with Google OAuth 2.0 → select an email → run parallel analysis engines (NLP, headers, URLs, IP/geolocation, threat intel) → explainable score 0–100 (`SAFE` / `SUSPICIOUS` / `HIGH_RISK`). A **manual paste** path is the hackathon backup if OAuth is not available.
 
-**What works today:** FastAPI `GET /api/health` and a React dashboard that shows **CONNECTED** or **OFFLINE**. Gmail OAuth and analysis engines are planned only (see docs). Do not commit OAuth secrets.
+**What works today:** FastAPI `GET /api/health` and a React dashboard that shows **CONNECTED** or **OFFLINE**. A Gmail OAuth-ready API foundation with credential-free mock mailbox support is available; analysis engines continue to be integrated incrementally (see docs). Do not commit OAuth secrets.
 
 ## Organization and domain
 

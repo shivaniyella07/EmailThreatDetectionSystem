@@ -3,6 +3,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.api.gmail import router as gmail_router
 from app.api.health import router as health_router
 from app.api.threat_analysis import router as threat_analysis_router
 from app.core.config import settings
@@ -22,6 +23,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(gmail_router, prefix="/api")
 app.include_router(health_router, prefix="/api")
 app.include_router(threat_analysis_router, prefix="/api")
 

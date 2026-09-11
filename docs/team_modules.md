@@ -29,7 +29,7 @@ Member 1 (API, Gmail OAuth, parser, orchestration)
 - `backend/app/database/` (SQLite later)
 - `backend/app/services/email_parser.py`
 - `backend/requirements.txt`
-- future Gmail OAuth routes and Gmail fetch helpers
+- Gmail OAuth routes, mock development mode, and Gmail fetch helpers
 
 **Responsibilities**
 
@@ -152,7 +152,7 @@ Member 1 (API, Gmail OAuth, parser, orchestration)
 - Schema or endpoint changes require an update to `docs/api_contract.md` in the same pull request
 - Keep service functions: documented input → common module envelope
 - Do not break, delete, or rename the existing health endpoint
-- Do not implement Gmail OAuth until the team explicitly starts that task
+- Keep OAuth credentials server-side and retain mock mode for credential-free demonstrations
 
 ## Security (all members)
 

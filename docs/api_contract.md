@@ -50,38 +50,42 @@ The frontend treats any successful parse of this body as **CONNECTED**. Network 
 
 ---
 
-## Planned endpoints (not implemented)
+## Gmail endpoints (implemented; Member 1)
 
-These are the agreed contracts for later work. Do not implement Gmail OAuth in this documentation-only update. Endpoint paths may be adjusted slightly at implementation time if this file is updated in the same PR.
+Gmail access is prepared for Google OAuth 2.0 only. Gmail passwords are never accepted. The default development configuration uses a deterministic mock mailbox, so no Google credentials are needed to run the application.
 
-### Gmail OAuth (Member 1)
+### GET `/api/gmail/auth`
 
-Conceptual flow:
+Starts the connection flow by returning an authorization URL. In mock mode the URL points to the local callback; with configured OAuth credentials it points to Google's read-only authorization flow.
 
-```
-Frontend                  Backend                     Google
-   |                         |                           |
-   |  start OAuth            |                           |
-   |------------------------>|  redirect / auth URL      |
-   |                         |-------------------------->|
-   |                         |  callback + tokens        |
-   |                         |<--------------------------|
-   |  session ready          |                           |
-   |<------------------------|                           |
+```json
+{
+  "mode": "mock",
+  "authorization_url": "http://127.0.0.1:8000/api/gmail/callback?mode=mock",
+  "message": "Mock Gmail authorization is ready; no Google credentials are required."
+}
 ```
 
-Rules:
+### GET `/api/gmail/callback`
 
-- Google OAuth 2.0 only
-- Never collect or store Gmail passwords
-- Client ID / secret only in `.env`, never in GitHub or frontend source
+Handles the OAuth callback (`code` or `error`). Mock mode marks the in-memory demo mailbox connected. Real token exchange remains intentionally disabled until secure server-side token storage is designed; codes and tokens are never returned in JSON.
 
-Exact OAuth routes will be documented here when Member 1 implements them.
+### GET `/api/gmail/emails`
 
-### Mailbox listing (Member 1)
+Lists recent email metadata. In development it returns sanitized mock messages.
 
-Conceptual: list recent messages after OAuth (id, from, subject, date). Not implemented.
+```json
+{
+  "mode": "mock",
+  "emails": [
+    {"id": "demo-team-update", "from": "Project Team <team@example.test>", "subject": "Weekly project update", "date": "Sun, 07 Sep 2026 09:00:00 +0000", "snippet": "Hi team..."}
+  ]
+}
+```
 
+### POST `/api/gmail/analyze/{email_id}`
+
+Fetches the selected Gmail/mock message, normalizes it through the shared email parser, and calls the same analysis orchestration used by the manual route. The response follows the final analysis response below.
 ### Manual analysis (hackathon backup)
 
 Conceptual: `POST` raw email text/headers. Same analysis pipeline and **same final response shape** as Gmail-selected mail.
